@@ -5,11 +5,11 @@
 #include <stdlib.h>
 #include "token.h"
 
-md_token_t mktoken(md_token_type_t tp, wchar_t *txt) {
+md_token_t mktoken(md_token_type_t tp, char *txt) {
     return (md_token_t) {.type=tp, .text=txt, .data=NULL};
 }
 
-md_token_t mktokend(md_token_type_t tp, wchar_t *txt, void *d) {
+md_token_t mktokend(md_token_type_t tp, char *txt, void *d) {
     return (md_token_t) {.type=tp, .text=txt, .data=d};
 }
 

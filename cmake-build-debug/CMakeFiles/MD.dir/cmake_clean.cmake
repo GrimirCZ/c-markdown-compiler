@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MD.dir/reader/string_reader/string_reader.c.o"
   "CMakeFiles/MD.dir/tokenizer/token.c.o"
   "CMakeFiles/MD.dir/tokenizer/tokenizer.c.o"
+  "CMakeFiles/MD.dir/util/utf8.c.o"
   "MD"
   "MD.pdb"
 )

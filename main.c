@@ -17,19 +17,19 @@ int main() {
     while ((tok = next_tok(readerCtx)).type != EOF_TOK) {
         switch (tok.type) {
             case H1:
-                wprintf(L"H1\n");
+                printf("H1\n");
                 break;
             case H2:
-                wprintf(L"H2\n");
+                printf("H2\n");
                 break;
             case TEXT:
-                wprintf(L"TEXT(\"%S\")\n", tok.text);
+                printf("TEXT(\"%s\")\n", tok.text);
                 break;
             case WHITESPACE:
-                wprintf(L"WHITESPACE\n");
+                printf("WHITESPACE\n");
                 break;
             case EOF_TOK:
-                wprintf(L"EOF\n");
+                printf("EOF\n");
                 break;
         }
 

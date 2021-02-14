@@ -231,6 +231,33 @@ tokenizer/tokenizer.c.s:
 	$(MAKE) -f CMakeFiles/MD.dir/build.make CMakeFiles/MD.dir/tokenizer/tokenizer.c.s
 .PHONY : tokenizer/tokenizer.c.s
 
+util/utf8.o: util/utf8.c.o
+
+.PHONY : util/utf8.o
+
+# target to build an object file
+util/utf8.c.o:
+	$(MAKE) -f CMakeFiles/MD.dir/build.make CMakeFiles/MD.dir/util/utf8.c.o
+.PHONY : util/utf8.c.o
+
+util/utf8.i: util/utf8.c.i
+
+.PHONY : util/utf8.i
+
+# target to preprocess a source file
+util/utf8.c.i:
+	$(MAKE) -f CMakeFiles/MD.dir/build.make CMakeFiles/MD.dir/util/utf8.c.i
+.PHONY : util/utf8.c.i
+
+util/utf8.s: util/utf8.c.s
+
+.PHONY : util/utf8.s
+
+# target to generate assembly for a file
+util/utf8.c.s:
+	$(MAKE) -f CMakeFiles/MD.dir/build.make CMakeFiles/MD.dir/util/utf8.c.s
+.PHONY : util/utf8.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... tokenizer/tokenizer.o"
 	@echo "... tokenizer/tokenizer.i"
 	@echo "... tokenizer/tokenizer.s"
+	@echo "... util/utf8.o"
+	@echo "... util/utf8.i"
+	@echo "... util/utf8.s"
 .PHONY : help
 
 

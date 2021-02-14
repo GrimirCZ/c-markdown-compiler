@@ -6,11 +6,13 @@ CMakeFiles/MD.dir/main.c.o: ../reader/reader_ctx.h
 CMakeFiles/MD.dir/main.c.o: ../reader/string_reader/string_reader.h
 CMakeFiles/MD.dir/main.c.o: ../tokenizer/token.h
 CMakeFiles/MD.dir/main.c.o: ../tokenizer/tokenizer.h
+CMakeFiles/MD.dir/main.c.o: ../util/utf8.h
 
 CMakeFiles/MD.dir/reader/string_reader/string_reader.c.o: ../reader/reader_ctx.h
 CMakeFiles/MD.dir/reader/string_reader/string_reader.c.o: ../reader/string_reader/string_reader.c
 CMakeFiles/MD.dir/reader/string_reader/string_reader.c.o: ../reader/string_reader/string_reader.h
 CMakeFiles/MD.dir/reader/string_reader/string_reader.c.o: ../util.h
+CMakeFiles/MD.dir/reader/string_reader/string_reader.c.o: ../util/utf8.h
 
 CMakeFiles/MD.dir/tokenizer/token.c.o: ../tokenizer/token.c
 CMakeFiles/MD.dir/tokenizer/token.c.o: ../tokenizer/token.h
@@ -19,4 +21,8 @@ CMakeFiles/MD.dir/tokenizer/tokenizer.c.o: ../reader/reader_ctx.h
 CMakeFiles/MD.dir/tokenizer/tokenizer.c.o: ../tokenizer/token.h
 CMakeFiles/MD.dir/tokenizer/tokenizer.c.o: ../tokenizer/tokenizer.c
 CMakeFiles/MD.dir/tokenizer/tokenizer.c.o: ../tokenizer/tokenizer.h
+CMakeFiles/MD.dir/tokenizer/tokenizer.c.o: ../util/utf8.h
+
+CMakeFiles/MD.dir/util/utf8.c.o: ../util/utf8.c
+CMakeFiles/MD.dir/util/utf8.c.o: ../util/utf8.h
 

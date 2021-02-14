@@ -103,6 +103,9 @@
 		<Unit filename="/mnt/c/Users/falta/CLionProjects/MD/util.h">
 			<Option target="MD"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/falta/CLionProjects/MD/util/utf8.c">
+			<Option target="MD"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/falta/CLionProjects/MD/util/utf8.h">
 			<Option target="MD"/>
 		</Unit>
