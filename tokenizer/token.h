@@ -38,4 +38,6 @@ md_token_t mktokend(md_token_type_t, char *, void *);
 
 void freetok(md_token_t);
 
+void printtok(md_token_t);
+
 #endif //MD_TOKEN_H

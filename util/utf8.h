@@ -203,6 +203,9 @@ utf8codepoint(const void *utf8_restrict str,
 utf8_nonnull utf8_weak void *
 md_nextcodepoint(const void *utf8_restrict str);
 
+// Return length of utf8_int32 NULL terminated string
+int md_utf8_int32_arr_len(const utf8_int32_t *pts);
+
 // Turn list of codepoints terminated by NULL to string
 char *md_cdptostr(const utf8_int32_t *pts);
 

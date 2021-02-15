@@ -872,6 +872,22 @@ void *md_nextcodepoint(const void *utf8_restrict str) {
     return (void *) s;
 }
 
+
+int md_utf8_int32_arr_len(const utf8_int32_t *pts) {
+    int needed_size = 0;
+    utf8_int32_t curval = 0;
+    int i = 0;
+    int charCount = 0;
+
+    // get size of needed string
+    while ((curval = pts[i++]) != 0) {
+        needed_size += utf8codepointsize(curval);
+        charCount++;
+    }
+
+    return needed_size;
+}
+
 char *md_cdptostr(const utf8_int32_t *pts) {
     int needed_size = 0;
     utf8_int32_t curval = 0;

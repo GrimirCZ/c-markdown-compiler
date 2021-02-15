@@ -3,6 +3,7 @@
 //
 
 #include <stdlib.h>
+#include <string.h>
 #include "tokenizer.h"
 #include "wchar.h"
 #include "stdio.h"
@@ -55,8 +56,12 @@ md_token_t next_tok(md_reader_t *reader) {
         buf[i++] = reader->readch(reader);
     }
 
-    if (tok.type == NONE && i > 0) {
-        tok = mktoken(TEXT, md_cdptostr(buf));
+    if (tok.type == NONE) {
+        if (buf[0] == 0) { // if buf empty return eof
+            tok = EOF_TOKEN;
+        } else { // if buf contains something, return it as text node
+            tok = mktoken(TEXT, md_cdptostr(buf));
+        }
     }
 
     return tok;
