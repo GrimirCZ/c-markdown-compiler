@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include "token.h"
 
+#define MD_IS_UNIX_LINE_ENDINGS(txt) txt[0] == '\n'
+
 md_token_t mktoken(md_token_type_t tp, char *txt) {
     return (md_token_t) {.type=tp, .text=txt, .data=NULL};
 }
@@ -31,12 +33,16 @@ void printtok(md_token_t tok) {
             printf("H2\n");
             break;
         case H3:
+            printf("H3\n");
             break;
         case H4:
+            printf("H4\n");
             break;
         case H5:
+            printf("H5\n");
             break;
         case H6:
+            printf("H6\n");
             break;
         case TEXT:
             printf("TEXT(\"%s\")\n", tok.text);
@@ -44,14 +50,22 @@ void printtok(md_token_t tok) {
         case WHITESPACE:
             printf("WHITESPACE\n");
             break;
+        case NEWLINE:
+            printf("NEWLINE(%s)\n", MD_IS_UNIX_LINE_ENDINGS(tok.text) ? "Unix" : "Windows");
+            break;
+        case TAB:
+            printf("TAB\n");
+            break;
+        case BULLET:
+            printf("BULLET\n");
+            break;
         case EOF_TOK:
             printf("EOF\n");
             break;
-        case TAB:
-            break;
-        case BULLET:
-            break;
         case NONE:
+            printf("EMPTY_TOKEN\n");
             break;
+        default:
+            printf("Unknown token");
     }
 }

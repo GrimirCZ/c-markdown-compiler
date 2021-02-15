@@ -17,7 +17,7 @@
 #endif
 
 int work() {
-    const char *src = "## já vás mám rád";
+    const char *src = "\t- abc \t\r\n## Hi";
 
     setlocale(LC_ALL, "cs_CZ.UTF-8");
     md_reader_t *readerCtx = md_make_string_reader((char *) src);
