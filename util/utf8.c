@@ -888,7 +888,7 @@ int md_utf8_int32_arr_len(const utf8_int32_t *pts) {
     return needed_size;
 }
 
-char *md_cdptostr(const utf8_int32_t *pts) {
+char *md_cdptostr(const utf8_int32_t *pts) { // TODO: move length detection to caller
     int needed_size = 0;
     utf8_int32_t curval = 0;
     int i = 0;

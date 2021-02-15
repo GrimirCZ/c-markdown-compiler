@@ -16,6 +16,7 @@ enum md_token_type {
     TAB,
     TEXT,
     BULLET,
+    NEWLINE,
     EOF_TOK,
     NONE
 };
