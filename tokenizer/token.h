@@ -24,18 +24,20 @@ typedef enum md_token_type md_token_type_t;
 
 struct md_token {
     md_token_type_t type;
-    wchar_t *text;
+    char *text;
     void *data;
 };
 
 typedef struct md_token md_token_t;
 
 // Make token
-md_token_t mktoken(md_token_type_t, wchar_t *);
+md_token_t mktoken(md_token_type_t, char *);
 
 // Make token with data
-md_token_t mktokend(md_token_type_t, wchar_t *, void *);
+md_token_t mktokend(md_token_type_t, char *, void *);
 
 void freetok(md_token_t);
+
+void printtok(md_token_t);
 
 #endif //MD_TOKEN_H

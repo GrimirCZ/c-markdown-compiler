@@ -10,9 +10,9 @@
 #include "../reader_ctx.h"
 
 struct md_string_reader_ctx {
-    wchar_t *str;
-    uint64_t cur_index;
-    uint64_t length;
+    char *str;
+    char *cur;
+    char *end;
 };
 
 typedef struct md_string_reader_ctx md_string_reader_t;

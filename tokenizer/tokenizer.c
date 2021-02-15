@@ -3,9 +3,12 @@
 //
 
 #include <stdlib.h>
+#include <string.h>
 #include "tokenizer.h"
 #include "wchar.h"
 #include "stdio.h"
+
+#define CUR_BUF_LEN 1024
 
 #define IS_H1(buf, next) buf[0] == '#' && next != '#'
 #define IS_H2(buf, next) buf[0] == '#' && buf[1] == '#' && next != '#'
@@ -14,9 +17,10 @@
 
 static const md_token_t EOF_TOKEN = {EOF_TOK, NULL};
 
+
 md_token_t next_tok(md_reader_t *reader) {
-    wchar_t buf[1024] = {0};
-    wchar_t next;
+    utf8_int32_t buf[CUR_BUF_LEN] = {0};
+    utf8_int32_t next;
     int i;
     md_token_t tok;
 
@@ -31,19 +35,19 @@ md_token_t next_tok(md_reader_t *reader) {
     while (!reader->is_eof(reader)) {
         if (i != 0) { // if first round, buffer is empty
             if (IS_H2(buf, next)) {
-                tok = mktoken(H1, wcsdup(buf));
+                tok = mktoken(H1, md_cdptostr(buf));
                 break;
             }
             if (IS_H1(buf, next)) {
-                tok = mktoken(H1, wcsdup(buf));
+                tok = mktoken(H1, md_cdptostr(buf));
                 break;
             }
             if (IS_SPACE(buf)) {
-                tok = mktoken(WHITESPACE, wcsdup(buf));
+                tok = mktoken(WHITESPACE, md_cdptostr(buf));
                 break;
             }
             if (IS_TERMINAL(next)) { // tokens are terminated by space
-                tok = mktoken(TEXT, wcsdup(buf));
+                tok = mktoken(TEXT, md_cdptostr(buf));
                 break;
             }
         }
@@ -52,9 +56,14 @@ md_token_t next_tok(md_reader_t *reader) {
         buf[i++] = reader->readch(reader);
     }
 
-    if (tok.type == NONE && i > 0) {
-        tok = mktoken(TEXT, wcsdup(buf));
+    if (tok.type == NONE) {
+        if (buf[0] == 0) { // if buf empty return eof
+            tok = EOF_TOKEN;
+        } else { // if buf contains something, return it as text node
+            tok = mktoken(TEXT, md_cdptostr(buf));
+        }
     }
 
     return tok;
 }
+
