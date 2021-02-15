@@ -1,3 +1,0 @@
-/mnt/c/Users/falta/CLionProjects/MD/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/falta/CLionProjects/MD/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/falta/CLionProjects/MD/build/CMakeFiles/MD.dir
